@@ -26,6 +26,20 @@ app.get('/score/:num1/:num2', (req, res) => {
 	return res.json({ score: `Player 1: ${num1}, Player 2: ${num2}` });
 });
 
+app.get('/winner/:num1/:num2', (req, res) => {
+	let num1 = Number(req.params.num1);
+	let num2 = Number(req.params.num2);
+	if (num1 > num2) {
+		message = 'Player 1 wins!!';
+	}else if (num2 > num1) {
+		message = 'Player 2 wins!!'
+	}else if (num1 === num2) {
+		message = "This is a tie!!"
+	}
+	return res.json({ message: message });
+});
+
+
 app.get('/olympics/:year', (req, res) => {
 	let year = req.params.year;
 	let message;
