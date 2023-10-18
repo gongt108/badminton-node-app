@@ -13,6 +13,13 @@ app.get('/equipment', (req, res) => {
 	});
 });
 
+app.get('/championships', (req, res) => {
+	return res.json({
+		message:
+			'Welcome to the BWF World Championships!!',
+	});
+});
+
 app.get('/rocks', (req, res) => {
 	return res.json({
 		message:
