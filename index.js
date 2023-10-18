@@ -13,6 +13,13 @@ app.get('/equipment', (req, res) => {
 	});
 });
 
+app.get('/rocks', (req, res) => {
+	return res.json({
+		message:
+			'Badminton Rocks!! Let the game begin!!',
+	});
+});
+
 app.get('/score/:num1/:num2', (req, res) => {
 	let num1 = Number(req.params.num1);
 	let num2 = Number(req.params.num2);
